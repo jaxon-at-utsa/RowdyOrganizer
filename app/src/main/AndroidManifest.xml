@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RowdyOrganizer"
+        tools:targetApi="31">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RowdyOrganizer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Welcome Activity -->
+        <activity
+            android:name=".view.Welcome"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RowdyOrganizer">
+        </activity>
+
+        <!-- Daily Tasks Activity -->
+        <activity
+            android:name=".view.DailyTasks"
+            android:exported="true"
+            android:label="Daily Tasks"
+            android:theme="@style/Theme.RowdyOrganizer">
+        </activity>
+
+        <!-- Calendar Activity -->
+        <activity
+            android:name=".view.Calendar"
+            android:exported="true"
+            android:label="Calendar"
+            android:theme="@style/Theme.RowdyOrganizer">
+        </activity>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".view.Settings"
+            android:exported="true"
+            android:label="Settings"
+            android:theme="@style/Theme.RowdyOrganizer">
+        </activity>
+
+    </application>
+</manifest>
