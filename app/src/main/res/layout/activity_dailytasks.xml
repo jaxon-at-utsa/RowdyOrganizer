@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.DailyTasks">
 
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/imageViewDailyTasks"
         android:layout_width="wrap_content"
@@ -19,6 +20,19 @@
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@drawable/dailytasks" />
 
+    <!-- RecyclerView for Daily Tasks -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDailyTasks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/addTaskButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDailyTasks"
+        tools:listitem="@layout/item_task" />
+
+    <!-- Home Button -->
     <Button
         android:id="@+id/HomeButton"
         style="@style/ButtonStyle"
@@ -27,17 +41,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
+    <!-- Add Task Button -->
     <Button
-        android:id="@+id/LogoutButton"
+        android:id="@+id/addTaskButton"
         style="@style/ButtonStyle"
-        android:text="@string/logoutButton"
+        android:text="@string/addTaskButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

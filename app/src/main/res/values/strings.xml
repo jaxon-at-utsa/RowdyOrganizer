@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RowdyOrganizer</string>
     <string name="homeButton">HOME</string>
+    <string name="addTaskButton">ADD TASK</string>"
     <string name="loginButton">LOGIN</string>
     <string name="logoutButton">LOGOUT</string>
     <string name="dailyTasksButton">Daily Tasks</string>

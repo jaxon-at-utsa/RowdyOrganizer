@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.Settings">
 
+    <!-- Background Image -->
     <ImageView
         android:id="@+id/imageViewSettings"
         android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/settings" />
 
+    <!-- Home Button -->
     <Button
         android:id="@+id/HomeButton"
         style="@style/ButtonStyle"
@@ -30,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
+    <!-- Logout Button -->
     <Button
         android:id="@+id/LogoutButton"
         style="@style/ButtonStyle"

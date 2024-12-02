@@ -1,26 +1,52 @@
 package edu.utsa.cs3443.rowdyorganizer.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 import edu.utsa.cs3443.rowdyorganizer.R;
+import edu.utsa.cs3443.rowdyorganizer.controller.DailyTasksController;
+import edu.utsa.cs3443.rowdyorganizer.model.TaskModel;
 
+/**
+ * DailyTasks activity serves as the View in the MVC architecture.
+ * Displays the daily tasks screen and handles user navigation to Home or Logout.
+ */
 public class DailyTasks extends AppCompatActivity {
+    private Button homeButton;
+    private Button addTaskButton; // Add task button
+    private RecyclerView recyclerView;
+    private DailyTasksController dailyTasksController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dailytasks);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Initialize UI components
+        recyclerView = findViewById(R.id.recyclerViewDailyTasks);
+        homeButton = findViewById(R.id.HomeButton);
+        addTaskButton = findViewById(R.id.addTaskButton); // Initialize add task button
+
+        // Initialize controller
+        dailyTasksController = new DailyTasksController(this);
+
+        // Set up RecyclerView
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        List<TaskModel> taskList = dailyTasksController.getTasksForToday();
+        TaskAdapter adapter = new TaskAdapter(taskList, dailyTasksController.getTaskManager());
+        recyclerView.setAdapter(adapter);
+
+        // Set up button listeners
+        homeButton.setOnClickListener(view -> dailyTasksController.navigateToHome());
+
+        // Handle "Add Task" button click
+        addTaskButton.setOnClickListener(view -> dailyTasksController.showAddTaskDialog());
     }
 }
