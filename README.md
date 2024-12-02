@@ -59,6 +59,15 @@ To clone and run the Rowdy Organizer application, you will need:
     - Connect an Android device or start an emulator.
     - Click the green **Run** button in Android Studio.
 
+### Demo Login Information
+
+To test the app, you can use the following demo credentials:
+
+- **Username:** `admin`
+- **Password:** `abc123`
+
+After launching the app, use these credentials on the login screen to access the application.
+
 ---
 
 ## Current Functionality
