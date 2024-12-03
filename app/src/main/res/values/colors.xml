@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="RowdyOrange">#d47412</color>
     <color name="RowdyBlue">#09243f</color>
+    <color name="dividerColor">#fb8d00</color>
 </resources>
