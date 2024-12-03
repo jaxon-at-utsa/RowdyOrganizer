@@ -60,8 +60,10 @@ public class DailyTasksController {
 
     /**
      * Displays a dialog for adding a new task.
+     *
+     * @param onTaskAdded A callback to refresh the task list after adding a task.
      */
-    public void showAddTaskDialog() {
+    public void showAddTaskDialog(Runnable onTaskAdded) {
         // Inflate the dialog layout
         View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_add_task, null);
 
@@ -132,6 +134,11 @@ public class DailyTasksController {
             taskManager.addTask(new TaskModel(0, task, databaseDate, selectedTime[0], false));
             dialog.dismiss(); // Close the dialog
             Toast.makeText(context, "Task added successfully", Toast.LENGTH_SHORT).show();
+
+            // Execute the callback to refresh tasks
+            if (onTaskAdded != null) {
+                onTaskAdded.run();
+            }
         });
 
         // Cancel button click listener
@@ -139,6 +146,7 @@ public class DailyTasksController {
 
         dialog.show();
     }
+
 
     /**
      * Converts a date from MM/DD/YYYY format to YYYY-MM-DD format.

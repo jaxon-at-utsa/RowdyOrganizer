@@ -49,7 +49,8 @@ public class Calendar extends AppCompatActivity {
         addTaskButton.setOnClickListener(view -> calendarController.showAddTaskDialog());
 
         // Set default date as current date and load tasks
-        calendarController.loadTasksForDate(calendarController.getCurrentDateInMMDDYYYY());
+        String currentDate = calendarController.getCurrentDateInMMDDYYYY();
+        calendarController.loadTasksForDate(calendarController.convertDateToDatabaseFormat(currentDate));
 
         // Handle date selection changes
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {

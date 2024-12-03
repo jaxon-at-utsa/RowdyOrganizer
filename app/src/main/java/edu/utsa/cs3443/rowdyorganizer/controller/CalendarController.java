@@ -177,7 +177,7 @@ public class CalendarController {
      * @param date The date string in MM/DD/YYYY format.
      * @return The date string in YYYY-MM-DD format.
      */
-    private String convertDateToDatabaseFormat(String date) {
+    public String convertDateToDatabaseFormat(String date) {
         String[] parts = date.split("/");
         return parts[2] + "-" + parts[0] + "-" + parts[1];
     }

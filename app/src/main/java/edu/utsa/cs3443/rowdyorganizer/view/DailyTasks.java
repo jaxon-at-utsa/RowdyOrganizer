@@ -46,7 +46,13 @@ public class DailyTasks extends AppCompatActivity {
         // Set up button listeners
         homeButton.setOnClickListener(view -> dailyTasksController.navigateToHome());
 
-        // Handle "Add Task" button click
-        addTaskButton.setOnClickListener(view -> dailyTasksController.showAddTaskDialog());
+        addTaskButton.setOnClickListener(view -> {
+            dailyTasksController.showAddTaskDialog(() -> {
+                // Refresh the task list and RecyclerView after adding a task
+                List<TaskModel> updatedTasks = dailyTasksController.getTasksForToday();
+                adapter.updateTaskList(updatedTasks);
+            });
+        });
+
     }
 }
