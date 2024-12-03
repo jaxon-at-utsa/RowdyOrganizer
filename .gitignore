@@ -10,3 +10,5 @@
 .cxx
 local.properties
 app/build
+app/release
+rowdy_organizer_key.jks
