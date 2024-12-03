@@ -92,7 +92,7 @@ public class CalendarController {
             int month = calendar.get(java.util.Calendar.MONTH);
             int day = calendar.get(java.util.Calendar.DAY_OF_MONTH);
 
-            DatePickerDialog datePickerDialog = new DatePickerDialog(context, (view, year1, month1, dayOfMonth) -> {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(context, R.style.DatePickerTheme, (view, year1, month1, dayOfMonth) -> {
                 String formattedDate = String.format("%02d/%02d/%04d", month1 + 1, dayOfMonth, year1);
                 selectedDate[0] = formattedDate;
                 datePickerButton.setText(formattedDate);
@@ -106,7 +106,7 @@ public class CalendarController {
             int hour = calendar.get(java.util.Calendar.HOUR_OF_DAY);
             int minute = calendar.get(java.util.Calendar.MINUTE);
 
-            TimePickerDialog timePickerDialog = new TimePickerDialog(context, (view, hourOfDay, minute1) -> {
+            TimePickerDialog timePickerDialog = new TimePickerDialog(context, R.style.TimePickerTheme, (view, hourOfDay, minute1) -> {
                 String period = hourOfDay >= 12 ? "PM" : "AM";
                 int hour12Format = hourOfDay > 12 ? hourOfDay - 12 : (hourOfDay == 0 ? 12 : hourOfDay);
                 String formattedTime = String.format("%02d:%02d %s", hour12Format, minute1, period);

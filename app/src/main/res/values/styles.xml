@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Button Style for Standard Buttons -->
     <style name="ButtonStyle" parent="@android:style/Widget.Button">
         <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">55dp</item>
@@ -11,6 +12,7 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!-- Button Style for Larger Buttons -->
     <style name="ButtonStyle2" parent="@android:style/Widget.Button">
         <item name="android:layout_width">250dp</item>
         <item name="android:layout_height">75dp</item>
@@ -21,6 +23,7 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!-- Custom Text Appearance -->
     <style name="FontStyle" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -28,7 +31,44 @@
         <item name="android:textSize">35sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
+    </style>
 
+    <!-- Theme for DatePicker Dialog -->
+    <style name="DatePickerTheme" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="android:colorAccent">@color/RowdyOrange</item>
+        <item name="android:datePickerDialogTheme">@style/CustomDatePickerDialog</item>
+    </style>
 
+    <!-- Theme for TimePicker Dialog -->
+    <style name="TimePickerTheme" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="android:colorAccent">@color/RowdyOrange</item>
+    </style>
+
+    <!-- Custom DatePicker Dialog -->
+    <style name="CustomDatePickerDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:colorPrimary">@color/RowdyBlue</item>
+        <item name="android:colorAccent">@color/RowdyOrange</item>
+        <item name="android:colorControlActivated">@color/RowdyOrange</item>
+        <item name="android:colorButtonNormal">@color/RowdyOrange</item>
+    </style>
+
+    <!-- CalendarView Customization -->
+    <style name="CustomCalendarViewTheme">
+        <item name="android:weekDayTextAppearance">@style/WeekDayTextStyle</item>
+        <item name="android:dateTextAppearance">@style/DateTextStyle</item>
+        <item name="android:selectedDateVerticalBar">@color/RowdyOrange</item>
+        <item name="android:focusedMonthDateColor">@color/RowdyOrange</item>
+        <item name="android:unfocusedMonthDateColor">@color/RowdyBlue</item>
+        <item name="android:showWeekNumber">false</item> <!-- Hide week numbers if desired -->
+    </style>
+
+    <!-- Weekday Text Appearance -->
+    <style name="WeekDayTextStyle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/RowdyBlue</item>
+    </style>
+
+    <!-- Date Text Appearance -->
+    <style name="DateTextStyle" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/RowdyOrange</item>
     </style>
 </resources>
