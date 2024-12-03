@@ -6,6 +6,8 @@
     <string name="logoutButton">LOGOUT</string>
     <string name="dailyTasksButton">Daily Tasks</string>
     <string name="calendarButton">Calendar</string>
+    <string name="ChangeUsernameButton">Change Username</string>
+    <string name="ChangePasswordButton">Change Password</string>
 
 
 </resources>
